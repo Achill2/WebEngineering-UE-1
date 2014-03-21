@@ -1,1 +1,4 @@
 Testdatei für Git
+
+Neuer Satz: Commit sind lokal - erst durch "push" werden sie in das main-repository übertragen, 
+durch "pull" der Stand des gesamten main-repository auf das lokale übertragen (update des lokalen rep)
