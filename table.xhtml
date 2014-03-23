@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de">
+
+<head>
+	<meta charset="UTF-8"></meta>
+	<link rel="stylesheet" type="text/css" href="styles/screen.css"/>
+	<title>Quiz question table</title>
+
+</head>
+
+<body>
+	<header id="header">
+		<img id="header_logo" class="header_class" alt="BIG-Logo" src="img/big-logo-small.png"/>
+		<span id="header_text" class="header_class">Quiz</span>
+		<button id="logout" class="header_class button" type="button">Abmelden</button>
+	</header>
+	<section id="content">
+		<section id="stage_of_game">
+			<section id="player_1_score" class="player_name_class">
+				<p>Spieler 1</p>
+			</section>
+			<section id="player_2_score" class="player_name_class">
+				<p>Spieler 2</p>
+			</section>
+			<h1 id="question_category">EWA</h1>
+		</section>
+		<h2 id="question">Welche zwei LVAs werden im Modul EWA zusammengefasst?</h2>
+		<section id="answers_section">
+			<div><button id="answer_01" class="button answer_button" type="button">IT Strategie</button></div>
+			<div><button id="answer_02" class="button answer_button" type="button">Web Engineering</button></div>
+			<div><button id="answer_03" class="button answer_button" type="button">Semistrukturierte Daten</button></div>
+			<div><button id="answer_04" class="button answer_button" type="button">Objektorientierte Modellierung</button></div>
+		</section>
+		<section id="timer_section">
+			<p>Verbleibende Zeit: </p>
+			<progress id="timer_bar" value="19" max="33"></progress>
+		</section>
+		<button id="next" class="button" type="button">weiter</button>
+		<p>Letztes Spiel: </p>
+	</section>
+	<footer id="footer">
+	© 2014 BIG Quiz
+	</footer>
+</body>
+
+</html>
