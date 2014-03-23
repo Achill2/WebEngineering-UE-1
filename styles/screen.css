@@ -1,7 +1,16 @@
 html {
 	font-family: sans-serif;
-	color: #ffffff;	
+	color: #ffffff;
 }
+h1 {
+	font-size: 0.8em;	
+}
+
+h2 {
+	font-size: 1.0em;
+	font-weight: normal;	
+}
+
 body {
 background-image:url("../img/style1-background.png");
 }
@@ -9,7 +18,7 @@ background-image:url("../img/style1-background.png");
 #header {
 	background-color: #000080;
 	font-weight: bold;
-	margin: 0%;
+	font-size: 2em;
 }
 
 #footer {
@@ -27,16 +36,18 @@ background-image:url("../img/style1-background.png");
 }
 
 .answer_button {
-	
+	background-color: #B8DEF0;
+	padding: 1.5% 0%;
+	width: 100%;
 }
 
 
 .header_class {
-	vertical-align: middle;	
+	vertical-align: middle;
 }
 
 #header_logo {
-	margin: 0.2em;	
+	margin: 0.4% 0.5% 0.4% 2%;	
 }
 
 #logout {
@@ -44,7 +55,9 @@ background-image:url("../img/style1-background.png");
 	color: #ffffff;
 	font-weight: bold;
 	border: 1px solid #C37003;
-	padding: 0.1em 1.5em; 
+	padding: 0.1em 1.5em;
+	
+	margin-right: 2%;
 	float: right;	
 }
 
@@ -53,7 +66,8 @@ background-image:url("../img/style1-background.png");
 #content {
 	margin-left: auto;
 	margin-right: auto;
-	text-align: center;	
+	width: 80%;
+
 }
 
 #player_1_score {
@@ -64,6 +78,26 @@ background-image:url("../img/style1-background.png");
 	float: right;	
 }
 
+#question_category {
+	text-align: center;	
+}
+
+#question {
+	text-align:center;	
+}
+
+#answers_section {
+	margin-left: auto;
+	margin-right:auto;
+	text-align: center;
+	width: 100%;
+}
+
+.timer_section {
+	float: left;
+	
+}
+
 #next {
 	background-color: #0AC303;
 	color: #ffffff;
@@ -72,19 +106,5 @@ background-image:url("../img/style1-background.png");
 	padding: 0.1em 2em; 
 
 	float: right;	
-}
-
-@media screen {
-	
-	#header {
-		width: 100%;
-		height: auto;
-	}
-	#content {
-		width: 80%;
-	}
-	#footer {
-		width: 100%;
-	}
 }
 
