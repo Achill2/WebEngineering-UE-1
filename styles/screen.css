@@ -1,0 +1,90 @@
+html {
+	font-family: sans-serif;
+	color: #ffffff;	
+}
+body {
+background-image:url("../img/style1-background.png");
+}
+
+#header {
+	background-color: #000080;
+	font-weight: bold;
+	margin: 0%;
+}
+
+#footer {
+	text-align: center;	
+}
+
+.player_name_class {
+	font-size: 0.2 em;
+	font-weight: bold;
+}
+
+.button {
+	border: none;
+	border-radius:5px;	
+}
+
+.answer_button {
+	
+}
+
+
+.header_class {
+	vertical-align: middle;	
+}
+
+#header_logo {
+	margin: 0.2em;	
+}
+
+#logout {
+	background-color: #ff8c00;
+	color: #ffffff;
+	font-weight: bold;
+	border: 1px solid #C37003;
+	padding: 0.1em 1.5em; 
+	float: right;	
+}
+
+
+
+#content {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;	
+}
+
+#player_1_score {
+	float: left;	
+}
+
+#player_2_score {
+	float: right;	
+}
+
+#next {
+	background-color: #0AC303;
+	color: #ffffff;
+	font-weight: bold;
+	border: 1px solid #047F00;
+	padding: 0.1em 2em; 
+
+	float: right;	
+}
+
+@media screen {
+	
+	#header {
+		width: 100%;
+		height: auto;
+	}
+	#content {
+		width: 80%;
+	}
+	#footer {
+		width: 100%;
+	}
+}
+
