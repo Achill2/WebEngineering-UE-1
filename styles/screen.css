@@ -1,0 +1,38 @@
+html {
+	font-family: Verdana, sans-serif;
+	background: url("../img/style1-background.png") no-repeat;
+	background-size: 100%;
+}
+header {
+	background-color: #00008B;
+	display: block;
+}
+.headerLogo {
+	vertical-align: middle;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-bottom: 0.5%;
+	padding-top: 0.5%;
+}
+.headerContent {
+	vertical-align: middle;;
+	font-weight: bold;
+	font-size: 1.7em;
+	color: #FFFFFF;
+}
+.headerButton {
+	vertical-align: middle;
+	font-weight: bold;
+	color: #FFFFFF;
+	border: 1px hidden;
+	border-radius: 0.5em;
+	background-color:  #FFA500;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+}
+section {
+	color: #FFFFFF;
+}
+footer {
+	text-align: center;
+	color: #FFFFFF;
+}
