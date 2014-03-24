@@ -1,8 +1,14 @@
 html {
-	font-family: Verdana, sans-serif;
+	font-family: sans-serif;
 	background: url("../img/style1-background.png") no-repeat;;
 	background-size: 100% 1000%;
 }
+
+h2 {
+	font-weight: normal;
+	font-size: 1em;	
+}
+
 header {
 	background-color: #00008B;
 }
@@ -25,8 +31,7 @@ header {
 	border: hidden;
 	border-radius: 0.5em;
 	background-color:  #FFA500;
-	padding: 0.5em 0.5em 0.5em 0.5em;
-	float: right;
+	padding: 0.3em 1.8em 0.3em 1.8em;
 
 
 }
@@ -35,6 +40,7 @@ section {
 }
 footer {
 	text-align: center;
+	font-size: 0.9em;
 	color: #FFFFFF;
 }
 
@@ -46,13 +52,14 @@ footer {
 
 .button {
 	border: none;
-	border-radius:5px;	
+	border-radius:0.5em;	
 }
 
 .answer_button {
 	background-color: #B8DEF0;
-	padding: 1.5% 0%;
-	width: 100%;
+	width: 49.5%;
+	padding: 1em 0em 1em;
+
 }
 
 #content {
@@ -63,7 +70,8 @@ footer {
 }
 
 #player_1_score {
-	float: left;	
+	float: left;
+		
 }
 
 #player_2_score {
@@ -81,21 +89,32 @@ footer {
 #answers_section {
 	margin-left: auto;
 	margin-right:auto;
+	margin-bottom: 2%;
 	text-align: center;
-	width: 100%;
+
 }
 
-.timer_section {
-	float: left;
-	
+#timer_section {
+	font-size: 0.9em;	
 }
+
+#timer_bar {
+	width: 50%;	
+}
+
 
 #next {
 	background-color: #0AC303;
 	color: #ffffff;
 	font-weight: bold;
 	border: 1px solid #047F00;
-	padding: 0.1em 2em; 
-
+	padding: 0.3em 2.4em; 
 	float: right;	
 }
+
+
+.timer_section {
+	float: left;
+}
+
+
