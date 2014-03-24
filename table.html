@@ -3,7 +3,7 @@
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta name="author" content="Levent Cinel, Fabian Filip" />
+		<meta name="author" content="Levent Cinel" />
 		<title xml:lang="en">Business Informatics Group Quiz</title>
 		<link rel="stylesheet" type="text/css" href="./styles/screen.css"/>
 	</head>
@@ -11,33 +11,44 @@
 		<header>
 			<img class="headerLogo" src="./img/big-logo-small.png" alt="Big Logo" />
 			<span class="headerContent">Quiz</span>
-			<input class="headerButton" type="button" value="Abmelden"/>  
+			<input class="headerButton" type="button" value="Abmelden"/>
 		</header>
+		
 		<section id="content">
 			<section id="stage_of_game">
 				<section id="player_1_score" class="player_name_class">
 					<div>Spieler 1</div>
-					<div>platzhalter</div>
+					<div>
+						<img src="./img/unknown-white.png" alt="Unknown Answer" />
+						<img src="./img/unknown-white.png" alt="Unknown Answer" />
+						<img src="./img/unknown-white.png" alt="Unknown Answer" />
+					</div>
 				</section>
 				<section id="player_2_score" class="player_name_class">
 					<div>Spieler 2</div>
+					<div>
+						<img src="./img/unknown-white.png" alt="Unknown Answer" />
+						<img src="./img/unknown-white.png" alt="Unknown Answer" />
+						<img src="./img/unknown-white.png" alt="Unknown Answer" />
+					</div>
 				</section>
-				<h1 id="question_category">EWA</h1>
+				<h1 class="question_category">EWA</h1>
 			</section>
-			<h2 id="question">Welche zwei LVAs werden im Modul EWA zusammengefasst?</h2>
-			<section id="answers_section">
-				<button id="answer_01" class="button answer_button a_button_left" type="button">IT Strategie</button>
-				<button id="answer_02" class="button answer_button a_button_right" type="button">Web Engineering</button>
-				<button id="answer_03" class="button answer_button a_button_left" type="button">Semistrukturierte Daten</button>
-				<button id="answer_04" class="button answer_button a_button_right" type="button">Objektorientierte Modellierung</button>
+			<h2 class="question">Welche zwei LVAs werden im Modul EWA zusammengefasst?</h2>
+			<section class="answers_section">
+				<input id="answer_01" class="button answer_button a_button_left" type="button" value="IT Strategie" />
+				<input id="answer_02" class="button answer_button a_button_right" type="button" value="Web Engineering"/>
+				<input id="answer_03" class="button answer_button a_button_left" type="button" value="Semistrukturierte Daten" />
+				<input id="answer_04" class="button answer_button a_button_right" type="button" value="Objektorientierte Modellierung"/>
 			</section>
-			<button id="next" class="button" type="button"> <span id="button_next_text">weiter</span><img id="image_next" src="./img/white-arrow-right.png" alt="arrow right" /> </button>
+			<button id="next" class="button" type="button"><span id="button_next_text">weiter</span><img id="image_next" src="./img/white-arrow-right.png" alt="arrow right" /> </button>
 			<section id="timer_section">
 				<div>Verbleibende Zeit: </div>
 				<progress id="timer_bar" value="19" max="33"></progress>
 			</section>
 			<p>Letztes Spiel: Nie</p>
 		</section>
+		
 		<footer>
 			&copy; 2014 BIG Quiz
 		</footer>
