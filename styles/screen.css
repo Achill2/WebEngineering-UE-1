@@ -1,34 +1,34 @@
 html {
 	font-family: Verdana, sans-serif;
-	background: url("../img/style1-background.png") no-repeat;
-	background-size: 100%;
+	background: url("../img/style1-background.png") no-repeat;;
+	background-size: 100% 1000%;
 }
 header {
 	background-color: #00008B;
-	display: block;
 }
 .headerLogo {
 	vertical-align: middle;
-	padding-left: 1%;
-	padding-right: 1%;
-	padding-bottom: 0.5%;
-	padding-top: 0.5%;
+	padding: 0.5% 1% 0.5% 1%;	
+	
 }
 .headerContent {
-	vertical-align: middle;;
+	vertical-align: middle;
 	font-weight: bold;
 	font-size: 1.7em;
 	color: #FFFFFF;
 }
 .headerButton {
-	vertical-align: middle;
+	float: right;
+	margin: 1% 1% 1% 1%;
 	font-weight: bold;
 	color: #FFFFFF;
-	border: 1px hidden;
+	border: hidden;
 	border-radius: 0.5em;
 	background-color:  #FFA500;
 	padding: 0.5em 0.5em 0.5em 0.5em;
 	float: right;
+
+
 }
 section {
 	color: #FFFFFF;
