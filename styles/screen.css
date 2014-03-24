@@ -9,12 +9,16 @@ h2 {
 	font-size: 1em;	
 }
 
+p {
+	font-size: 0.9em;	
+}
+
 header {
-	background-color: #00008B;
+	background-color: #033058;
 }
 .headerLogo {
 	vertical-align: middle;
-	padding: 0.5% 1% 0.5% 1%;	
+	margin: 0.3em 0.5em 0.3em 1em;		
 	
 }
 .headerContent {
@@ -28,9 +32,9 @@ header {
 	margin: 1% 1% 1% 1%;
 	font-weight: bold;
 	color: #FFFFFF;
-	border: hidden;
+	border: 1px solid #c37700;
 	border-radius: 0.5em;
-	background-color:  #FFA500;
+	background-color:  #f29400;
 	padding: 0.3em 1.8em 0.3em 1.8em;
 
 
@@ -56,10 +60,19 @@ footer {
 }
 
 .answer_button {
-	background-color: #B8DEF0;
-	width: 49.5%;
+	background-color: #b9d6f0;
+	width: 49%;
 	padding: 1em 0em 1em;
+	
 
+}
+
+.a_button_left {
+	margin: 0.2em 0.4% 0.2em 0;
+}
+
+.a_button_right {
+	margin: 0.2em 0 0.2em 0.4%;
 }
 
 #content {
@@ -95,21 +108,34 @@ footer {
 }
 
 #timer_section {
-	font-size: 0.9em;	
+	font-size: 0.9em;
+	width: 49.5%;	
 }
 
 #timer_bar {
-	width: 50%;	
+		width: 100%;
 }
 
 
 #next {
-	background-color: #0AC303;
+	background-color: #36d344;
 	color: #ffffff;
 	font-weight: bold;
-	border: 1px solid #047F00;
-	padding: 0.3em 2.4em; 
+	border: 1px solid #116d01;
+	padding: 0.2em 1em; 
 	float: right;	
+}
+
+#button_next_text {
+	margin: 0 1.2em;
+	font-size: 1.2em;
+	vertical-align: middle;	
+}
+
+/* put the white arrow to the right side */
+#image_next {
+	float: right;
+	
 }
 
 
@@ -117,4 +143,35 @@ footer {
 	float: left;
 }
 
+/* when the width is less or equal to 32em the following code will
+be executed */
+@media screen and (max-width: 32em) {
+
+	.headerButton {
+		padding: 0.3em 0.2em;	
+	}
+
+	.answer_button {
+		width: 100%;	
+	}
+	
+	.a_button_left {
+		margin: 0.2em 0 0.2em 0;	
+	}
+	
+	.a_button_right {
+		margin: 0.2em 0 0.2em 0;	
+	}
+	
+	#next {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+	
+	#timer_section {
+		width: 100%;	
+	}
+	
+
+}
 
