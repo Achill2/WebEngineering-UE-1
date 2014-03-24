@@ -13,8 +13,29 @@
 			<span class="headerContent">Quiz</span>
 			<input class="headerButton" type="button" value="Anmelden"/>  
 		</header>
-		<section>
-			!!!TEXTFIELDS AND EDITTEXTS!!!
+		<section id="content">
+			<section id="stage_of_game">
+				<section id="player_1_score" class="player_name_class">
+					<p>Spieler 1</p>
+				</section>
+				<section id="player_2_score" class="player_name_class">
+					<p>Spieler 2</p>
+				</section>
+				<h1 id="question_category">EWA</h1>
+			</section>
+			<h2 id="question">Welche zwei LVAs werden im Modul EWA zusammengefasst?</h2>
+			<section id="answers_section">
+				<div><button id="answer_01" class="button answer_button" type="button">IT Strategie</button></div>
+				<div><button id="answer_02" class="button answer_button" type="button">Web Engineering</button></div>
+				<div><button id="answer_03" class="button answer_button" type="button">Semistrukturierte Daten</button></div>
+				<div><button id="answer_04" class="button answer_button" type="button">Objektorientierte Modellierung</button></div>
+			</section>
+			<section id="timer_section">
+				<p>Verbleibende Zeit: </p>
+				<progress id="timer_bar" value="19" max="33"></progress>
+			</section>
+			<button id="next" class="button" type="button">weiter</button>
+			<p>Letztes Spiel: </p>
 		</section>
 		<footer>
 			&copy; 2014 BIG Quiz

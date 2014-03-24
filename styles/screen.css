@@ -28,6 +28,7 @@ header {
 	border-radius: 0.5em;
 	background-color:  #FFA500;
 	padding: 0.5em 0.5em 0.5em 0.5em;
+	float: right;
 }
 section {
 	color: #FFFFFF;
@@ -35,4 +36,66 @@ section {
 footer {
 	text-align: center;
 	color: #FFFFFF;
+}
+
+
+.player_name_class {
+	font-size: 0.2 em;
+	font-weight: bold;
+}
+
+.button {
+	border: none;
+	border-radius:5px;	
+}
+
+.answer_button {
+	background-color: #B8DEF0;
+	padding: 1.5% 0%;
+	width: 100%;
+}
+
+#content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+
+}
+
+#player_1_score {
+	float: left;	
+}
+
+#player_2_score {
+	float: right;	
+}
+
+#question_category {
+	text-align: center;	
+}
+
+#question {
+	text-align:center;	
+}
+
+#answers_section {
+	margin-left: auto;
+	margin-right:auto;
+	text-align: center;
+	width: 100%;
+}
+
+.timer_section {
+	float: left;
+	
+}
+
+#next {
+	background-color: #0AC303;
+	color: #ffffff;
+	font-weight: bold;
+	border: 1px solid #047F00;
+	padding: 0.1em 2em; 
+
+	float: right;	
 }
