@@ -1,16 +1,8 @@
 html {
 	font-family: sans-serif;
+	color: #FFFFFF;
 	background: url("../img/style1-background.png") no-repeat;;
 	background-size: 100% 1000%;
-}
-
-h2 {
-	font-weight: normal;
-	font-size: 1em;	
-}
-
-p {
-	font-size: 0.9em;	
 }
 
 header {
@@ -18,9 +10,9 @@ header {
 }
 .headerLogo {
 	vertical-align: middle;
-	margin: 0.3em 0.5em 0.3em 1em;		
-	
+	margin: 0.5em 1% 0.5em 1%;	
 }
+
 .headerContent {
 	vertical-align: middle;
 	font-weight: bold;
@@ -29,25 +21,23 @@ header {
 }
 .headerButton {
 	float: right;
-	margin: 1% 1% 1% 1%;
+	margin: 1% 1% 0% 0%;
 	font-weight: bold;
 	color: #FFFFFF;
-	border: 1px solid #c37700;
+	border: hidden;
 	border-radius: 0.5em;
-	background-color:  #f29400;
-	padding: 0.3em 1.8em 0.3em 1.8em;
-
-
-}
-section {
-	color: #FFFFFF;
-}
-footer {
-	text-align: center;
-	font-size: 0.9em;
-	color: #FFFFFF;
+	background-color:  #FFA500;
+	padding: 0.5em;
 }
 
+h2 {
+	font-weight: normal;
+	font-size: 1.2em;	
+}
+
+p {
+	font-size: 0.9em;	
+}
 
 .player_name_class {
 	font-size: 0.2 em;
@@ -62,85 +52,85 @@ footer {
 .answer_button {
 	background-color: #b9d6f0;
 	width: 49%;
-	padding: 1em 0em 1em;
-	
-
+	padding: 1em 0em 1em 0em;
 }
 
 .a_button_left {
-	margin: 0.2em 0.4% 0.2em 0;
+	margin: 0.2em 0.4% 0.2em 0em;
 }
 
 .a_button_right {
-	margin: 0.2em 0 0.2em 0.4%;
+	margin: 0.2em 0em 0.2em 0.4%;
 }
 
 #content {
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
-
+	width: 75%;
 }
 
 #player_1_score {
 	float: left;
-		
 }
 
-#player_2_score {
+#player_2_score{
 	float: right;	
 }
 
-#question_category {
+.question_category {
 	text-align: center;	
 }
 
-#question {
-	text-align:center;	
+.question {
+	padding-top: 5%;
+	text-align: center;
 }
 
-#answers_section {
+.answers_section {
 	margin-left: auto;
-	margin-right:auto;
+	margin-right: auto;
 	margin-bottom: 2%;
 	text-align: center;
-
 }
 
 #timer_section {
 	font-size: 0.9em;
 	width: 49.5%;	
-}
+}	
 
 #timer_bar {
 		width: 100%;
 }
 
-
 #next {
-	background-color: #36d344;
-	color: #ffffff;
+	background-color: #36D344;
+	color: #FFFFFF;
 	font-weight: bold;
-	border: 1px solid #116d01;
+	border: 0.1em solid #116d01;
 	padding: 0.2em 1em; 
 	float: right;	
 }
 
 #button_next_text {
-	margin: 0 1.2em;
+	margin: 0em 1.2em;
 	font-size: 1.2em;
 	vertical-align: middle;	
 }
 
 /* put the white arrow to the right side */
 #image_next {
-	float: right;
-	
+	float: right;	
 }
-
 
 .timer_section {
 	float: left;
+}
+
+footer {
+	padding-top: 5%;	
+	text-align: center;
+	font-size: 0.9em;
+	color: #FFFFFF;
 }
 
 /* when the width is less or equal to 32em the following code will
@@ -148,7 +138,7 @@ be executed */
 @media screen and (max-width: 32em) {
 
 	.headerButton {
-		padding: 0.3em 0.2em;	
+		margin: 1em 1em 0em 0%;
 	}
 
 	.answer_button {
@@ -156,11 +146,11 @@ be executed */
 	}
 	
 	.a_button_left {
-		margin: 0.2em 0 0.2em 0;	
+		margin: 0.2em 0em 0.2em 0em;	
 	}
 	
 	.a_button_right {
-		margin: 0.2em 0 0.2em 0;	
+		margin: 0.2em 0em 0.2em 0em;	
 	}
 	
 	#next {
@@ -171,7 +161,5 @@ be executed */
 	#timer_section {
 		width: 100%;	
 	}
-	
-
 }
 
