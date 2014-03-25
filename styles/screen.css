@@ -40,7 +40,8 @@ p {
 }
 
 .player_name_class {
-	font-size: 0.2 em;
+	font-size: 0.9em;
+	text-align: center;
 	font-weight: bold;
 }
 
@@ -66,7 +67,7 @@ p {
 #content {
 	margin-left: auto;
 	margin-right: auto;
-	width: 75%;
+	width: 80%;
 }
 
 #player_1_score {
@@ -140,6 +141,7 @@ be executed */
 	.headerButton {
 		margin: 1em 1em 0em 0%;
 	}
+
 
 	.answer_button {
 		width: 100%;	
