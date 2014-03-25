@@ -3,10 +3,12 @@
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta name="author" content="Levent Cinel" />
+		<meta name="author" content="Levent Cinel"></meta>
+		<meta charset="UTF-8"></meta>
 		<title xml:lang="en">Business Informatics Group Quiz</title>
 		<link rel="stylesheet" type="text/css" href="./styles/screen.css"/>
 		<script src="./js/framework.js"></script>
+		<script src="./js/jQuery.js"></script>
 	</head>
 	<body>
 		<header>
@@ -37,10 +39,10 @@
 			</section>
 			<h2 class="question">Welche zwei LVAs werden im Modul EWA zusammengefasst?</h2>
 			<section class="answers_section">
-				<input id="answer_01" class="button answer_button a_button_left" type="button" value="IT Strategie" />
-				<input id="answer_02" class="button answer_button a_button_right" type="button" value="Web Engineering"/>
-				<input id="answer_03" class="button answer_button a_button_left" type="button" value="Semistrukturierte Daten" />
-				<input id="answer_04" class="button answer_button a_button_right" type="button" value="Objektorientierte Modellierung"/>
+				<input id="answer_01" onclick="changeAnswerColor(this)" class="button answer_button a_button_left" type="button" value="IT Strategie" />
+				<input id="answer_02" onclick="changeAnswerColor(this)" class="button answer_button a_button_right" type="button" value="Web Engineering"/>
+				<input id="answer_03" onclick="changeAnswerColor(this)" class="button answer_button a_button_left" type="button" value="Semistrukturierte Daten" />
+				<input id="answer_04" onclick="changeAnswerColor(this)" class="button answer_button a_button_right" type="button" value="Objektorientierte Modellierung"/>
 			</section>
 			<button id="next" class="button" type="button"><span id="button_next_text">weiter</span><img id="image_next" src="./img/white-arrow-right.png" alt="arrow right" /> </button>
 			<section id="timer_section">
@@ -55,6 +57,14 @@
 		</footer>	
 		
 		<script>
+		
+		// variables to store if an answer has been selected (should be all changed into arrays I guess)
+		// just used for the show-effect function -TODO remove later!
+		var answer01 = false;
+		var answer02 = false;
+		var answer03 = false;
+		var answer04 = false;
+		
 		var startTime;
 		var duration = 0;
 		startTimer(); // start Timer
@@ -78,6 +88,34 @@
 			// update progress bar and timer
 			timer_sec.innerHTML = secToMMSS( (30 - duration) );
 			document.getElementById("timer_bar").value = duration;
+		}
+		
+		// function to switch the colors of a selected answer
+		// TODO! this is just a show-effect function and should be removed completly later
+		function changeAnswerColor(element) {
+			var selected = false;
+			if (element.id == "answer_01") {
+				answer01 = !answer01;
+				selected = answer01;
+			} else if (element.id == "answer_02") {
+				answer02 = !answer02;
+				selected = answer02;	
+			} else if (element.id == "answer_03") {
+				answer03 = !answer03;
+				selected = answer03;
+			} else if (element.id == "answer_04") {
+				answer04 = !answer04;
+				selected = answer04;
+			}
+			
+			if (selected) {
+				$(element).css("background-color", "#033058");
+				$(element).css("color", "#FFFFFF");
+			} else {
+				$(element).css("background-color", "#b9d6f0");
+				$(element).css("color", "#000000");	
+			}
+			
 		}
 		</script>
 	</body>
