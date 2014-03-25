@@ -6,6 +6,7 @@
 		<meta name="author" content="Levent Cinel, Fabian Filip" />
 		<title xml:lang="en">Business Informatics Group Quiz</title>
 		<link rel="stylesheet" type="text/css" href="./styles/screen.css"/>
+		<script src="./js/framework.js"></script>
 	</head>
 	<body>
 		<header>
@@ -26,20 +27,47 @@
 			</section>
 			<h2 id="question">Welche zwei LVAs werden im Modul EWA zusammengefasst?</h2>
 			<section id="answers_section">
-				<button id="answer_01" class="button answer_button a_button_left" type="button">IT Strategie</button>
-				<button id="answer_02" class="button answer_button a_button_right" type="button">Web Engineering</button>
-				<button id="answer_03" class="button answer_button a_button_left" type="button">Semistrukturierte Daten</button>
-				<button id="answer_04" class="button answer_button a_button_right" type="button">Objektorientierte Modellierung</button>
+				<button id="answer_01"  class="button answer_button a_button_left" type="button">IT Strategie</button>
+				<button id="answer_02"  class="button answer_button a_button_right" type="button">Web Engineering</button>
+				<button id="answer_03"  class="button answer_button a_button_left" type="button">Semistrukturierte Daten</button>
+				<button id="answer_04"  class="button answer_button a_button_right" type="button">Objektorientierte Modellierung</button>
 			</section>
 			<button id="next" class="button" type="button"> <span id="button_next_text">weiter</span><img id="image_next" src="./img/white-arrow-right.png" alt="arrow right" /> </button>
 			<section id="timer_section">
-				<div>Verbleibende Zeit: </div>
-				<progress id="timer_bar" value="19" max="33"></progress>
+				<div>Verbleibende Zeit: <span id="timer_seconds"></span></div>
+				<progress id="timer_bar" value="0" max="30"></progress>
 			</section>
 			<p>Letztes Spiel: Nie</p>
 		</section>
 		<footer>
 			&copy; 2014 BIG Quiz
-		</footer>
+		</footer>	
+		
+		<script>
+		var startTime;
+		var duration = 0;
+		startTimer(); // start Timer
+		
+		function startTimer() {
+			startTime = new Date();
+			startTime = startTime.getTime(); // Time in milliseconds
+			updateTimer();
+			setInterval(function(){updateTimer() }, 1000); // start timer	
+		}
+		
+		function updateTimer() {
+			if (duration >= 30) {
+				// 30 seconds reached -> restart
+				startTime = (new Date()).getTime();
+			}
+			var timer_sec = document.getElementById("timer_seconds");
+			duration = (((new Date()).getTime() - startTime)/1000); // calculate difference between now and start time in seconds
+			duration = Math.floor(duration); // make it a whole number without decimal points 
+			
+			// update progress bar and timer
+			timer_sec.innerHTML = secToMMSS( (30 - duration) );
+			document.getElementById("timer_bar").value = duration;
+		}
+		</script>
 	</body>
 </html>
