@@ -13,29 +13,41 @@
 			<span class="headerContent">Quiz</span>
 			<input class="headerButton" type="button" value="Anmelden"/>
 		</header>
-		<section>
+		<section id ="content_register">
 			<section id="personalData">
 				<h1>Persönliche Daten</h1>
-				<label for="first_name_input">Vorname:</label>	
-				<input type="text" id="first_name_input"></input>
-				<label for="last_name_input">Nachname:</label>
-				<input type="text" id="last_name_input"></input>
-				<label id="birhdate_input">Geburtstag:</label>
-				<input type="date" id="birthdate_input"></input>
-				<label id="sex_input">Geschlecht:</label>
-				<select>
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-					<option value="other">Other</option>
-				</select>
+					<p>
+						<label class="reg_label" for="first_name_input">Vorname:</label>	
+						<input class="reg_input" type="text" id="first_name_input"></input>
+					</p>
+					<p>
+						<label class="reg_label" for="last_name_input">Nachname:</label>
+						<input class="reg_input" type="text" id="last_name_input"></input>
+					</p>
+					<p>
+						<label class="reg_label" id="birhdate_input">Geburtstag:</label>
+						<input class="reg_input" type="date" id="birthdate_input"></input>
+					</p>
+					<p>
+						<label class="reg_label" id="sex_input">Geschlecht:</label>
+						<select class="reg_input">
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="other">Other</option>
+						</select>
+					</p>
 				
 			</section>
 			<section id="loginData">
 				<h1>Login Daten</h1>
-				<label for="user_name_input">Benutzername:</label>
-				<input type="text" id="user_name_input"></input>
-				<label for="user_password_input">Passwort:</label>
-				<input type="password" id="user_password_input" minlength=4 maxlength=8> </input>   
+					<p>
+						<label class="reg_label" for="user_name_input">Benutzername:</label>
+						<input class="reg_input" type="text" id="user_name_input"></input>
+					</p>
+					<p>
+						<label class="reg_label" for="user_password_input">Passwort:</label>
+						<input class="reg_input" type="password" id="user_password_input" minlength=4 maxlength=8> </input>
+					</p>
 				
 				
 			</section>

@@ -135,6 +135,27 @@ footer {
 	color: #FFFFFF;
 }
 
+#content_register {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#loginData {
+	margin-top: 3em;
+}
+
+.reg_input {
+	width: 60%;
+	float: right;
+}
+
+.reg_label {
+	width: 40%;
+	font-size: 1.2em;
+	text-align: left;
+}
+
 /* when the width is less or equal to 32em the following code will
 be executed */
 @media screen and (max-width: 32em) {
@@ -163,6 +184,12 @@ be executed */
 	
 	#timer_section {
 		width: 100%;	
+	}
+	#content_register {
+		width: 100%;
+	}
+	.reg_input {
+		width: 100%;
 	}
 }
 
