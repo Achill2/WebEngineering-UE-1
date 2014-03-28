@@ -104,20 +104,18 @@ p {
 		width: 100%;
 }
 
-#next {
-	background-color: #36D344;
+.submit {
+	
+	background: #36D344 url("../img/white-arrow-right.png") no-repeat 95% 50%;
 	color: #FFFFFF;
 	font-weight: bold;
+	font-size: 1em;
 	border: 0.1em solid #116d01;
-	padding: 0.2em 1em; 
+	padding: 0.2em 2em 0.2em 1.5em; 
 	float: right;	
 }
 
-#button_next_text {
-	margin: 0em 1.2em;
-	font-size: 1.2em;
-	vertical-align: middle;	
-}
+
 
 /* put the white arrow to the right side */
 #image_next {
@@ -183,7 +181,7 @@ be executed */
 		margin: 0.2em 0em 0.2em 0em;	
 	}
 	
-	#next {
+	#next_button {
 		width: 100%;
 		margin-bottom: 1em;
 	}
