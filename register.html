@@ -14,8 +14,9 @@
 			<input class="headerButton" type="button" value="Anmelden"/>
 		</header>
 		<section id ="content_register">
-			<section id="personalData">
-				<h1>Persönliche Daten</h1>
+			<form action="" name="register_form" method="post">
+				<section id="personalData">
+					<h1>Persönliche Daten</h1>
 					<p>
 						<label class="reg_label" for="first_name_input">Vorname:</label>	
 						<input class="reg_input" type="text" id="first_name_input"></input>
@@ -36,10 +37,9 @@
 							<option value="other">Anderes</option>
 						</select>
 					</p>
-				
-			</section>
-			<section id="loginData">
-				<h1>Login Daten</h1>
+				</section>
+				<section id="loginData">
+					<h1>Login Daten</h1>
 					<p>
 						<label class="reg_label" for="user_name_input">Benutzername*:</label>
 						<input class="reg_input" type="text" id="user_name_input"></input>
@@ -48,9 +48,9 @@
 						<label class="reg_label" for="user_password_input">Passwort*:</label>
 						<input class="reg_input" type="password" id="user_password_input" minlength=4 maxlength=8> </input>
 					</p>
-			</section>
-			<input id="submit_register_button" class="button submit" type="submit" value="Registrieren"></button>
-			
+				</section>
+				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren"></button>
+			</form>
 			<footer> 
 				<p class="Zusatztext"> Mit &quot;*&quot; gezeichnete Felder sind Pflichtfelder </p> 
 			</footer>

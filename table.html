@@ -38,13 +38,15 @@
 				<h1 class="question_category">EWA</h1>
 			</section>
 			<h2 class="question">Welche zwei LVAs werden im Modul EWA zusammengefasst?</h2>
-			<section class="answers_section">
-				<input id="answer_01" onclick="changeAnswerColor(this)" class="button answer_button a_button_left" type="button" value="IT Strategie" />
-				<input id="answer_02" onclick="changeAnswerColor(this)" class="button answer_button a_button_right" type="button" value="Web Engineering"/>
-				<input id="answer_03" onclick="changeAnswerColor(this)" class="button answer_button a_button_left" type="button" value="Semistrukturierte Daten" />
-				<input id="answer_04" onclick="changeAnswerColor(this)" class="button answer_button a_button_right" type="button" value="Objektorientierte Modellierung"/>
-			</section>
-			<input id="next_button" class="button submit" type="submit" value="weiter"></button>
+			<form action="" name="answer_form" method="post">
+				<section class="answers_section">
+					<input id="answer_01" onclick="changeAnswerColor(this)" class="button answer_button a_button_left" type="button" value="IT Strategie" />
+					<input id="answer_02" onclick="changeAnswerColor(this)" class="button answer_button a_button_right" type="button" value="Web Engineering"/>
+					<input id="answer_03" onclick="changeAnswerColor(this)" class="button answer_button a_button_left" type="button" value="Semistrukturierte Daten" />
+					<input id="answer_04" onclick="changeAnswerColor(this)" class="button answer_button a_button_right" type="button" value="Objektorientierte Modellierung"/>
+				</section>
+				<input id="next_button" class="button submit" type="submit" value="weiter"></button>
+			</form>	
 			<section id="timer_section">
 				<div>Verbleibende Zeit: <span id="timer_seconds"></span></div>
 				<progress id="timer_bar" value="0" max="30"></progress>
