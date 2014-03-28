@@ -6,6 +6,20 @@
 		<meta name="author" content="Levent Cinel" />
 		<title xml:lang="en">Business Informatics Group Quiz - Register</title>
 		<link rel="stylesheet" type="text/css" href="./styles/screen.css"/>
+		<script src="./js/framework.js"></script>
+		<script type="text/javascript">
+			function buttoncolor () {
+			document.getElementById("submit_register_button").style.background = "#36D344";
+			}
+			if(!hasFormValidation() ) {
+				//javascript validation
+			}
+			// buttoncolor() einbauen
+			function validation () {
+				//Validierungsfunktion	
+			} 
+		</script>
+		
 	</head>
 	<body>
 		<header>
@@ -42,14 +56,14 @@
 					<h1>Login Daten</h1>
 					<p>
 						<label class="reg_label" for="user_name_input">Benutzername*:</label>
-						<input class="reg_input" type="text" id="user_name_input"></input>
+						<input class="reg_input" type="text" id="user_name_input" maxlength=8 required></input>
 					</p>
 					<p>
 						<label class="reg_label" for="user_password_input">Passwort*:</label>
-						<input class="reg_input" type="password" id="user_password_input" minlength=4 maxlength=8> </input>
+						<input class="reg_input" type="password" id="user_password_input" maxlength=8 required></input>
 					</p>
 				</section>
-				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren"></button>
+				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren"></input>
 			</form>
 			<footer> 
 				<p class="Zusatztext"> Mit &quot;*&quot; gezeichnete Felder sind Pflichtfelder </p> 
