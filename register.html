@@ -10,8 +10,13 @@
 		<script src="./js/jQuery.js"></script>
 		<script type="text/javascript">
 		
-			function buttoncolor () {
-			document.getElementById("submit_register_button").style.background = "#36D344";
+			function enable() {
+				document.getElementById("submit_register_button").disabled = false;
+				document.getElementById("submit_register_button").style.background = "#36D344";
+			}
+			function disable() {
+				document.getElementById("submit_register_button").disabled = true;
+				document.getElementById("submit_register_button").style.background = "#A2B5CD";
 			}
 			if(!hasFormValidation() ) {
 				//javascript validation
@@ -72,7 +77,7 @@
 						<input class="reg_input" type="password" id="user_password_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen" required></input>
 					</p>
 				</section>
-				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren"></input>
+				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren" disabled></input>
 			</form>
 			<footer> 
 				<p class="Zusatztext"> Mit &quot;*&quot; gezeichnete Felder sind Pflichtfelder </p> 
@@ -86,7 +91,8 @@
 		// this method has to be within the body to work correctly
 		$('#user_name_input').bind('input', function() {
 				//$(this).next().stop(true, true).fadeIn(0).html('[input event fired!]: ' + $(this).val()).fadeOut(2000);
-				usernameValidation();
+				//usernameValidation();
+				
 			});
 		</script>
 	</body>
