@@ -16,9 +16,13 @@
 			if(!hasFormValidation() ) {
 				//javascript validation
 			}
-			// buttoncolor() einbauen
-			function validation () {
-				//Validierungsfunktion	
+			
+			function usernameValidation() {
+				if (document.getElementById("user_name_input").checkValidity()) {
+					
+				} else {
+					alert("ERROR");	
+				}
 			} 
 			
 			
@@ -60,12 +64,12 @@
 					<h1>Login Daten</h1>
 					<p>
 						<label class="reg_label" for="user_name_input">Benutzername*:</label>
-						<input class="reg_input" type="text" id="user_name_input" maxlength=8 required></input>
+						<input class="reg_input" type="text" id="user_name_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen"  required></input>
 						<span>test</span>
 					</p>
 					<p>
 						<label class="reg_label" for="user_password_input">Passwort*:</label>
-						<input class="reg_input" type="password" id="user_password_input" maxlength=8 required></input>
+						<input class="reg_input" type="password" id="user_password_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen" required></input>
 					</p>
 				</section>
 				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren"></input>
@@ -81,7 +85,8 @@
 		<script>
 		// this method has to be within the body to work correctly
 		$('#user_name_input').bind('input', function() {
-				$(this).next().stop(true, true).fadeIn(0).html('[input event fired!]: ' + $(this).val()).fadeOut(2000);		
+				//$(this).next().stop(true, true).fadeIn(0).html('[input event fired!]: ' + $(this).val()).fadeOut(2000);
+				usernameValidation();
 			});
 		</script>
 	</body>
