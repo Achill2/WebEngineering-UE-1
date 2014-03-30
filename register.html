@@ -32,9 +32,20 @@
 			if(!hasFormValidation() ) {
 				//javascript validation TODO - deal with that
 			}
+			
+			/*
 			var checkname = new Boolean(false);
 			var checkpass = new Boolean(false);
 			var checkdate = new Boolean(false);
+			*/
+			
+			///* (tried making it more re-usable)
+			var checkname = {input_id:"user_name_input", valid:false, error_message_field:"user_name_error_msg"};
+			var checkpass = {input_id:"user_password_input", valid:false, error_message_field:"user_password_error_msg"};
+			var checkdate = {input_id:"birthdate_input", valid:true, error_message_field:"birthdate_error_msg"};
+			
+			var validationList = [checkname, checkpass, checkdate];
+			//*/
 						
 			function usernameValidation() {
 				var error_msg = document.getElementById("user_name_error_msg");
@@ -70,7 +81,7 @@
 					error_msg.style.display="none";
 					checkpass = true;
 					if(checkname == true){
-						enable();
+						enableRegister();
 					}
 				} else {
 					
@@ -84,7 +95,7 @@
 					error_msg.innerHTML=message;
 					error_msg.style.display="block";
 					checkpass = false;
-					disable();
+					disableRegister();
 				}
 			}
 			
@@ -98,9 +109,8 @@
 				
 				if (input_element.checkValidity()) {
 					error_msg.style.display="none";
-					if (checkAllValid()) {
-						enableRegister();	
-					}
+					var variable = getValidationListElement(input_element.id);
+					variable.valid = true;
 					
 				} else {
 					
@@ -114,30 +124,55 @@
 					}
 					error_msg.innerHTML=message;
 					error_msg.style.display="block";
-					disableRegister();
+					
+					var variable = getValidationListElement(input_element.id);
+					variable.valid = false;
+				}
+				
+				if (checkAllValid()) {
+					enableRegister();	
+				} else {
+					disableRegister();	
 				}
 			}
 			
+			/**
+			 * iterates through all elements in the validationList 
+			 * returns true if all elements are marked as "valid=true"
+			**/
 			function checkAllValid() {
-				if (document.getElementById("user_name_input").checkValidity() &&
-					document.getElementById("user_password_input").checkValidity()) {
-						return true;
-					} else {
-						return false;	
+				for (var i=0;i<validationList.length;i++) { 
+						if (!validationList[i].valid) {
+							return false;	
+						}
 					}
+				return true;
 					
 			}
 			
+			/**
+			 * get the validationList-element which input_id == element_id
+			 * there must be an object with the element_id - return null otherwise
+			**/
+			function getValidationListElement(element_id) {
+				for (var i=0;i<validationList.length;i++) { 
+						if (validationList[i].input_id == element_id) {
+							return validationList[i];	
+						}
+					}
+				return null;
+			}
+			
+			/**
+			 * returns the error message field for the given element if existing
+			**/
 			function getMessageElement(element) {
-				if (element.id == "user_name_input") {
-					return document.getElementById("user_name_error_msg");	
-				}
-				if (element.id == "user_password_input") {
-					return document.getElementById("user_password_error_msg");	
-				}
-				if (element.id == "birthdate_input") {
-					return document.getElementById("birthdate_error_msg");
-				}
+				for (var i=0;i<validationList.length;i++) { 
+						if (validationList[i].input_id == element.id) {
+							return document.getElementById(validationList[i].error_message_field);	
+						}
+					}
+				return null;
 			}
 			
 			/**
@@ -146,6 +181,7 @@
 			**/
 			function validateDate(input_element) {
 				var error_msg = getMessageElement(input_element);
+				var element_list_entry = getValidationListElement(input_element.id);
 				//error_msg.style.display="block";
 				var date_string = "";
 				if (hasNativeDateInput()) {
@@ -158,18 +194,27 @@
 				var rehtml5 = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
 				//document.getElementById("birthdate_error_msg").innerHTML = date_string + " match: " + rehtml5.test(date_string);
 				
-				if (rehtml5.test(date_string)) {
-					if (validateDateSemantics(date_string)) {
+				if (date_string.length == "0" || rehtml5.test(date_string)) {
+					if (date_string.length == "0" || validateDateSemantics(date_string)) {
 						error_msg.style.display="none";
-						// all ok
+						element_list_entry.valid = true;
+						
 					} else {
 						error_msg.innerHTML = "Kein gültiges Datum";
 						error_msg.style.display="block"
+						element_list_entry.valid = false;
 					}
 					
 				} else {
 					error_msg.innerHTML = "Datum in der Form TT.MM.JJJJ eingeben";
 					error_msg.style.display="block";
+					element_list_entry.valid = false;
+				}
+				
+				if (checkAllValid()) {
+					enableRegister();	
+				} else {
+					disableRegister();	
 				}
 				
 			}
@@ -213,15 +258,15 @@
 					<h1>Persönliche Daten</h1>
 					<p>
 						<label class="reg_label" for="first_name_input">Vorname:</label>	
-						<input class="reg_input" type="text" id="first_name_input"></input>
+						<input class="reg_input" type="text" id="first_name_input"/>
 					</p>
 					<p>
 						<label class="reg_label" for="last_name_input">Nachname:</label>
-						<input class="reg_input" type="text" id="last_name_input"></input>
+						<input class="reg_input" type="text" id="last_name_input"/>
 					</p>
 					<p>
 						<label class="reg_label" for="birhdate_input">Geburtstag:</label>
-						<input class="reg_input" type="date" id="birthdate_input" pattern="(\d{1,2})\.(\d{1,2})\.(\d{4})"></input>
+						<input class="reg_input" type="date" id="birthdate_input" placeholder="TT.MM.JJJJ" pattern="(\d{1,2})\.(\d{1,2})\.(\d{4})"/>
 						<div id="birthdate_error_msg" class="error_msg">Hier kommt dann die Error-Message</div>
 					</p>
 					<p>
@@ -237,16 +282,16 @@
 					<h1>Login Daten</h1>
 					<p>
 						<label class="reg_label" for="user_name_input">Benutzername*:</label>
-						<input class="reg_input" type="text" id="user_name_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen"  required></input>
+						<input class="reg_input" type="text" id="user_name_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen"  required/>
 						<div id="user_name_error_msg" class="error_msg">Hier kommt dann die Error-Message</div>
 					</p>
 					<p>
 						<label class="reg_label" for="user_password_input">Passwort*:</label>
-						<input class="reg_input" type="password" id="user_password_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen" required></input>
+						<input class="reg_input" type="password" id="user_password_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen" required/>
 						<div id="user_password_error_msg" class="error_msg">Hier kommt dann die Error-Message</div>
 					</p>
 				</section>
-				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren" disabled></input>
+				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren" disabled/>
 			</form>
 			<footer> 
 				<p class="Zusatztext"> Mit &quot;*&quot; gezeichnete Felder sind Pflichtfelder </p> 
