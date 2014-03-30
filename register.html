@@ -32,14 +32,19 @@
 			if(!hasFormValidation() ) {
 				//javascript validation
 			}
-			
+			var checkname = new Boolean(false);
+			var checkpass = new Boolean(false);
+						
 			function usernameValidation() {
 				var error_msg = document.getElementById("user_name_error_msg");
 				var user_name_input_field = document.getElementById("user_name_input");
 				
 				if (user_name_input_field.checkValidity()) {
 					error_msg.style.display="none";
-					enableRegister();
+					checkname = true;
+					if(checkpass == true){
+						enableRegister();
+					}
 				} else {
 					
 					var name = user_name_input_field.value;
@@ -51,9 +56,36 @@
 					}
 					error_msg.innerHTML=message;
 					error_msg.style.display="block";
+					checkname = false;
 					disableRegister();
 				}
-			} 
+			}
+			
+			function passwordValidation() {
+				var error_msg = document.getElementById("password_error_msg");
+				var password_input_field = document.getElementById("user_password_input");
+				
+				if (password_input_field.checkValidity()) {
+					error_msg.style.display="none";
+					checkpass = true;
+					if(checkname == true){
+						enable();
+					}
+				} else {
+					
+					var pass = password_input_field.value;
+					var message = "";
+					if (pass.length < 4) {
+						message = "Das Passwort muss aus mindestens 4 Zeichen bestehen";
+					} else if (pass.length > 8) {
+						message = "Das Passwort darf aus höchstens 8 Zeichen bestehen";	
+					}
+					error_msg.innerHTML=message;
+					error_msg.style.display="block";
+					checkpass = false;
+					disable();
+				}
+			}
 			
 			function validateTextLength(min, max, input_element) {
 				var error_msg = getMessageElement(input_element);
@@ -169,6 +201,7 @@
 				
 			});
 		$('#user_password_input').bind('input', function() {
+				// passwordValidation();
 				validateTextLength(4, 8, $(this)[0]);
 				
 			});
