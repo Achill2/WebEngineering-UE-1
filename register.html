@@ -30,10 +30,11 @@
 				document.getElementById("submit_register_button").style.background = "#A2B5CD";
 			}
 			if(!hasFormValidation() ) {
-				//javascript validation
+				//javascript validation TODO - deal with that
 			}
 			var checkname = new Boolean(false);
 			var checkpass = new Boolean(false);
+			var checkdate = new Boolean(false);
 						
 			function usernameValidation() {
 				var error_msg = document.getElementById("user_name_error_msg");
@@ -87,6 +88,11 @@
 				}
 			}
 			
+			/**
+			 *	validates if the length of the value of the input_element is
+			 * between the min and max values (including these values)
+			 *
+			**/
 			function validateTextLength(min, max, input_element) {
 				var error_msg = getMessageElement(input_element);
 				
@@ -129,6 +135,65 @@
 				if (element.id == "user_password_input") {
 					return document.getElementById("user_password_error_msg");	
 				}
+				if (element.id == "birthdate_input") {
+					return document.getElementById("birthdate_error_msg");
+				}
+			}
+			
+			/**
+			 *	validates first the syntax of the input_element value to match dd.mm.yyyy
+			 * if the syntax is valid the semantics are checked
+			**/
+			function validateDate(input_element) {
+				var error_msg = getMessageElement(input_element);
+				//error_msg.style.display="block";
+				var date_string = "";
+				if (hasNativeDateInput()) {
+					// when the browser supports date-input fields
+					date_string = getNormalizedDateString(input_element);
+				} else {
+					// browser does not support date-input fields
+					date_string = input_element.value;
+				}
+				var rehtml5 = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
+				//document.getElementById("birthdate_error_msg").innerHTML = date_string + " match: " + rehtml5.test(date_string);
+				
+				if (rehtml5.test(date_string)) {
+					if (validateDateSemantics(date_string)) {
+						error_msg.style.display="none";
+						// all ok
+					} else {
+						error_msg.innerHTML = "Kein gültiges Datum";
+						error_msg.style.display="block"
+					}
+					
+				} else {
+					error_msg.innerHTML = "Datum in der Form TT.MM.JJJJ eingeben";
+					error_msg.style.display="block";
+				}
+				
+			}
+			
+			/**
+			 * check semantics of date-string with format dd.mm.yyyy
+			 * if it is a valid date true is returned
+			**/
+			function validateDateSemantics(date_string) {
+				var splitted_date = date_string.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+				
+				if (splitted_date[2] < 1 || splitted_date[2] > 12) 
+					return false;
+				else if (splitted_date[1] < 1 || splitted_date[1]> 31) 
+					return false;
+				else if ((splitted_date[2]==4 || splitted_date[2]==6 || splitted_date[2]==9 || splitted_date[2]==11) && splitted_date[1] ==31) 
+					return false;
+				else if (splitted_date[2] == 2) 
+				{
+					var isleap = (splitted_date[3] % 4 == 0 && (splitted_date[3] % 100 != 0 || splitted_date[3] % 400 == 0));
+					if (splitted_date[1]> 29 || (splitted_date[1] ==29 && !isleap)) 
+							return false;
+				}
+				return true;	
 			}
 			
 			
@@ -156,7 +221,8 @@
 					</p>
 					<p>
 						<label class="reg_label" for="birhdate_input">Geburtstag:</label>
-						<input class="reg_input" type="date" id="birthdate_input"></input>
+						<input class="reg_input" type="date" id="birthdate_input" pattern="(\d{1,2})\.(\d{1,2})\.(\d{4})"></input>
+						<div id="birthdate_error_msg" class="error_msg">Hier kommt dann die Error-Message</div>
 					</p>
 					<p>
 						<label class="reg_label" for="sex_input">Geschlecht:</label>
@@ -203,6 +269,11 @@
 		$('#user_password_input').bind('input', function() {
 				// passwordValidation();
 				validateTextLength(4, 8, $(this)[0]);
+				
+			});
+		
+		$('#birthdate_input').bind('input', function() {
+				validateDate($(this)[0]);
 				
 			});
 		</script>
