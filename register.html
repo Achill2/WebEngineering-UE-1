@@ -21,13 +21,19 @@
 			if(!hasFormValidation() ) {
 				//javascript validation
 			}
-			
+			var checkname = new Boolean(false);
+			var checkpass = new Boolean(false);
+						
 			function usernameValidation() {
 				var error_msg = document.getElementById("user_name_error_msg");
 				var user_name_input_field = document.getElementById("user_name_input");
 				
 				if (user_name_input_field.checkValidity()) {
 					error_msg.style.display="none";
+					checkname = true;
+					if(checkpass == true){
+						enable();
+					}
 				} else {
 					
 					var name = user_name_input_field.value;
@@ -39,8 +45,36 @@
 					}
 					error_msg.innerHTML=message;
 					error_msg.style.display="block";
+					checkname = false;
+					disable();
 				}
-			} 
+			}
+			
+			function passwordValidation() {
+				var error_msg = document.getElementById("password_error_msg");
+				var password_input_field = document.getElementById("user_password_input");
+				
+				if (password_input_field.checkValidity()) {
+					error_msg.style.display="none";
+					checkpass = true;
+					if(checkname == true){
+						enable();
+					}
+				} else {
+					
+					var pass = password_input_field.value;
+					var message = "";
+					if (pass.length < 4) {
+						message = "Das Passwort muss aus mindestens 4 Zeichen bestehen";
+					} else if (pass.length > 8) {
+						message = "Das Passwort darf aus höchstens 8 Zeichen bestehen";	
+					}
+					error_msg.innerHTML=message;
+					error_msg.style.display="block";
+					checkpass = false;
+					disable();
+				}
+			}
 			
 			
 		</script>
@@ -87,6 +121,7 @@
 					<p>
 						<label class="reg_label" for="user_password_input">Passwort*:</label>
 						<input class="reg_input" type="password" id="user_password_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen" required></input>
+						<div id="password_error_msg" >Hier kommt dann die Error-Message</div>
 					</p>
 				</section>
 				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren" disabled></input>
@@ -103,8 +138,10 @@
 		// this method has to be within the body to work correctly
 		$('#user_name_input').bind('input', function() {
 				//$(this).next().stop(true, true).fadeIn(0).html('[input event fired!]: ' + $(this).val()).fadeOut(2000);
-				//usernameValidation();
-				
+				usernameValidation();
+			});
+		$('#user_password_input').bind('input', function() {
+				passwordValidation();
 			});
 		</script>
 	</body>

@@ -204,3 +204,11 @@ be executed */
 	float: right;
 }
 
+#password_error_msg {
+	display: none;	
+	color: #FF0000;
+	font-size: 0.8em;
+	float: rigth;
+}
+
+
