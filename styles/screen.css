@@ -197,10 +197,9 @@ be executed */
 	}
 }
 
-#user_name_error_msg {
+.error_msg {
 	display: none;	
 	color: #FF0000;
 	font-size: 0.8em;
-	float: right;
 }
 
