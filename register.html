@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 	<head>
 		<meta name="author" content="Levent Cinel" />
 		<title xml:lang="en">Business Informatics Group Quiz - Register</title>
@@ -14,7 +14,7 @@
 			var user_password_valid = false;
 			
 			function checkAllValid() {
-				if (user_name_valid && user_password_valid) {
+				if (user_name_valid &amp;&amp; user_password_valid) {
 					enableRegister();	
 				} else {
 					disableRegister();	
@@ -23,14 +23,11 @@
 		
 			function enableRegister() {
 				document.getElementById("submit_register_button").disabled = false;
-				document.getElementById("submit_register_button").style.background = "#36D344";
+				document.getElementById("submit_register_button").style.backgroundColor = "#36D344";
 			}
 			function disableRegister() {
 				document.getElementById("submit_register_button").disabled = true;
-				document.getElementById("submit_register_button").style.background = "#A2B5CD";
-			}
-			if(!hasFormValidation() ) {
-				//javascript validation TODO - deal with that
+				document.getElementById("submit_register_button").style.backgroundColor = "#A2B5CD";
 			}
 			
 			/*
@@ -61,7 +58,7 @@
 					
 					var name = user_name_input_field.value;
 					var message = "";
-					if (name.length < 4) {
+					if (name.length &lt; 4) {
 						message = "Der Benutzername muss aus mindestens 4 Zeichen bestehen";
 					} else if (name.length > 8) {
 						message = "Der Benutzername darf aus höchstens 8 Zeichen bestehen";	
@@ -87,7 +84,7 @@
 					
 					var pass = password_input_field.value;
 					var message = "";
-					if (pass.length < 4) {
+					if (pass.length &lt; 4) {
 						message = "Das Passwort muss aus mindestens 4 Zeichen bestehen";
 					} else if (pass.length > 8) {
 						message = "Das Passwort darf aus höchstens 8 Zeichen bestehen";	
@@ -117,7 +114,7 @@
 					var name = input_element.value;
 					var label_value = $("label[for='"+ input_element.id +"']").text();
 					var message = "";
-					if (name.length < min) {
+					if (name.length &lt; min) {
 						message = label_value + " muss aus mindestens " + min + " Zeichen bestehen";
 					} else if (name.length > max) {
 						message = label_value + " darf aus höchstens " + max + " Zeichen bestehen";	
@@ -141,7 +138,7 @@
 			 * returns true if all elements are marked as "valid=true"
 			**/
 			function checkAllValid() {
-				for (var i=0;i<validationList.length;i++) { 
+				for (var i=0;i &lt; validationList.length;i++) { 
 						if (!validationList[i].valid) {
 							return false;	
 						}
@@ -155,7 +152,7 @@
 			 * there must be an object with the element_id - return null otherwise
 			**/
 			function getValidationListElement(element_id) {
-				for (var i=0;i<validationList.length;i++) { 
+				for (var i=0;i &lt; validationList.length;i++) { 
 						if (validationList[i].input_id == element_id) {
 							return validationList[i];	
 						}
@@ -167,7 +164,7 @@
 			 * returns the error message field for the given element if existing
 			**/
 			function getMessageElement(element) {
-				for (var i=0;i<validationList.length;i++) { 
+				for (var i=0;i &lt; validationList.length;i++) { 
 						if (validationList[i].input_id == element.id) {
 							return document.getElementById(validationList[i].error_message_field);	
 						}
@@ -226,16 +223,16 @@
 			function validateDateSemantics(date_string) {
 				var splitted_date = date_string.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
 				
-				if (splitted_date[2] < 1 || splitted_date[2] > 12) 
+				if (splitted_date[2] &lt; 1 || splitted_date[2] > 12) 
 					return false;
-				else if (splitted_date[1] < 1 || splitted_date[1]> 31) 
+				else if (splitted_date[1] &lt; 1 || splitted_date[1]> 31) 
 					return false;
-				else if ((splitted_date[2]==4 || splitted_date[2]==6 || splitted_date[2]==9 || splitted_date[2]==11) && splitted_date[1] ==31) 
+				else if ((splitted_date[2]==4 || splitted_date[2]==6 || splitted_date[2]==9 || splitted_date[2]==11) &amp;&amp; splitted_date[1] ==31) 
 					return false;
 				else if (splitted_date[2] == 2) 
 				{
-					var isleap = (splitted_date[3] % 4 == 0 && (splitted_date[3] % 100 != 0 || splitted_date[3] % 400 == 0));
-					if (splitted_date[1]> 29 || (splitted_date[1] ==29 && !isleap)) 
+					var isleap = (splitted_date[3] % 4 == 0 &amp;&amp; (splitted_date[3] % 100 != 0 || splitted_date[3] % 400 == 0));
+					if (splitted_date[1]> 29 || (splitted_date[1] ==29 &amp;&amp; !isleap)) 
 							return false;
 				}
 				return true;	
@@ -253,7 +250,7 @@
 			<input class="headerButton" type="button" value="Anmelden"/>
 		</header>
 		<section id ="content_register">
-			<form action="" name="register_form" method="post">
+			<form action="#" name="register_form" method="post">
 				<section id="personalData">
 					<h1>Persönliche Daten</h1>
 					<p>
@@ -266,7 +263,7 @@
 					</p>
 					<p>
 						<label class="reg_label" for="birhdate_input">Geburtstag:</label>
-						<input class="reg_input" type="date" id="birthdate_input" placeholder="TT.MM.JJJJ" pattern="(\d{1,2})\.(\d{1,2})\.(\d{4})"/>
+						<input class="reg_input" type="date" id="birthdate_input" placeholder="TT.MM.JJJJ" pattern="^(\d{1,2})\.(\d{1,2})\.(\d{4})$"/>
 						<div id="birthdate_error_msg" class="error_msg">Hier kommt dann die Error-Message</div>
 					</p>
 					<p>
@@ -282,23 +279,23 @@
 					<h1>Login Daten</h1>
 					<p>
 						<label class="reg_label" for="user_name_input">Benutzername*:</label>
-						<input class="reg_input" type="text" id="user_name_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen"  required/>
+						<input class="reg_input" type="text" id="user_name_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen"  required="required"/>
 						<div id="user_name_error_msg" class="error_msg">Hier kommt dann die Error-Message</div>
 					</p>
 					<p>
 						<label class="reg_label" for="user_password_input">Passwort*:</label>
-						<input class="reg_input" type="password" id="user_password_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen" required/>
+						<input class="reg_input" type="password" id="user_password_input" pattern=".{4,8}" title="mindestens 4, höchstens 8 Zeichen" required="required"/>
 						<div id="user_password_error_msg" class="error_msg">Hier kommt dann die Error-Message</div>
 					</p>
 				</section>
-				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren" disabled/>
+				<input id="submit_register_button" class="button submit" type="submit" value="Registrieren" disabled="disabled"/>
 			</form>
 			<footer> 
 				<p class="Zusatztext"> Mit &quot;*&quot; gezeichnete Felder sind Pflichtfelder </p> 
 			</footer>
 		</section>
 		<footer>
-			<span class="footerContent">&copy; 2014 BIG Quiz</span>
+			<span class="footerContent">&#169; 2014 BIG Quiz</span>
 		</footer>
 		
 		<script>

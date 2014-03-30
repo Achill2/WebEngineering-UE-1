@@ -106,7 +106,7 @@ p {
 
 .submit {
 	
-	background: #A2B5CD url("../img/white-arrow-right.png") no-repeat 95% 50%;
+	background: #36D344 url("../img/white-arrow-right.png") no-repeat 95% 50%;
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 1em;
@@ -202,6 +202,10 @@ be executed */
 	display: none;	
 	color: #FF0000;
 	font-size: 0.8em;
+}
+
+#submit_register_button {
+	background-color: #A2B5CD;
 }
 
 
